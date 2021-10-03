@@ -7,11 +7,11 @@
 | email              | string              | null: false, unique: true |
 | encrypted_password | string              | null: false               |
 | nickname           | string              | null: false               |
-| last_name          | date                | null: false               |
-| first_name         | date                | null: false               |
-| last_name_kana     | date                | null: false               |
-| first_name_kana    | date                | null: false               |
-| birthday           | integer             | null: false               |
+| last_name          | string              | null: false               |
+| first_name         | string              | null: false               |
+| last_name_kana     | string              | null: false               |
+| first_name_kana    | string              | null: false               |
+| birthday           | date                | null: false               |
 
 ### Association
 
