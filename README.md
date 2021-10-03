@@ -7,11 +7,10 @@
 | email              | string              | null: false, unique: true |
 | encrypted_password | string              | null: false               |
 | nickname           | string              | null: false               |
-| last_name          | string              | null: false               |
-| first_name         | string              | null: false               |
-| first_name         | string              | null: false               |
-| last_name_kana     | string              | null: false               |
-| first_name_kana    | string              | null: false               |
+| last_name          | date                | null: false               |
+| first_name         | date                | null: false               |
+| last_name_kana     | date                | null: false               |
+| first_name_kana    | date                | null: false               |
 | birthday           | integer             | null: false               |
 
 ### Association
@@ -23,14 +22,14 @@
 
 | Column                | Type       | Options                        |
 |-----------------------|------------|--------------------------------|
-| user_id               | string     | null: false, foreign_key: true |
+| user                  | references | null: false, foreign_key: true |
 | item_name             | string     | null: false                    |
 | explanation           | text       | null: false                    |
-| category              | string     | null: false,                   |
-| condition             | string     | null: false                    |
-| shipping_charge       | string     | null: false                    |
-| shipping_area         | string     | null: false                    |
-| shipping_day          | integer    | null: false,                   |
+| category_id           | integer    | null: false,                   |
+| condition_id          | integer    | null: false                    |
+| shipping_charge_id    | integer    | null: false                    |
+| shipping_area_id      | integer    | null: false                    |
+| shipping_day_id       | integer    | null: false,                   |
 | price                 | integer    | null: false                    |
 
 ### Association
@@ -42,26 +41,26 @@
 
 | Column      | Type       | Options                        |
 |-------------|------------|--------------------------------|
-| user_id     | references | null: false, foreign_key: true |
-| item_id     | references | null: false, foreign_key: true |
+| user        | references | null: false, foreign_key: true |
+| item        | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :items
+- belongs_to :item
 - has_one :address
 
 ## addresses table
 
 | Column           | Type       | Options                        |
 |------------------|------------|--------------------------------|
-| order_id         | references | null: false foreign_key:true   |
+| order            | references | null: false foreign_key:true   |
 | postal_code      | integer    | null: false                    |
-| prefecture       | text       | null: false                    |
+| shipping_area_od | integer    | null: false                    |
 | city             | text       | null: false                    |
 | house_number     | text       | null: false                    |
 | building         | text       |                                |
-| telephone_number | integer    | null: false                    |
+| telephone_number | string     | null: false                    |
 
 ### Association
 
