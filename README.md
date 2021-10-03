@@ -56,7 +56,7 @@
 |------------------|------------|--------------------------------|
 | order            | references | null: false foreign_key:true   |
 | postal_code      | integer    | null: false                    |
-| shipping_area_od | integer    | null: false                    |
+| shipping_area_id | integer    | null: false                    |
 | city             | text       | null: false                    |
 | house_number     | text       | null: false                    |
 | building         | text       |                                |
