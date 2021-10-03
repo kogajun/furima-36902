@@ -35,7 +35,7 @@
 ### Association
 
 - belongs_to :user
-- has_many :orders
+- belongs_to :order
 
 ## orders table
 
@@ -55,11 +55,11 @@
 | Column           | Type       | Options                        |
 |------------------|------------|--------------------------------|
 | order            | references | null: false foreign_key:true   |
-| postal_code      | integer    | null: false                    |
+| postal_code      | string     | null: false                    |
 | shipping_area_id | integer    | null: false                    |
-| city             | text       | null: false                    |
-| house_number     | text       | null: false                    |
-| building         | text       |                                |
+| city             | string     | null: false                    |
+| house_number     | string     | null: false                    |
+| building         | string     |                                |
 | telephone_number | string     | null: false                    |
 
 ### Association
