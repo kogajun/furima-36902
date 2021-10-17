@@ -5,7 +5,6 @@ class OrdersController < ApplicationController
 
   def index
     @order_address = OrderAddress.new
-    move_to_index
   end
 
   def create
@@ -13,7 +12,7 @@ class OrdersController < ApplicationController
     if @order_address.valid?
       pay_item
       @order_address.save
-      move_to_index
+      redirect_to root_path
     else
       render :index
     end
