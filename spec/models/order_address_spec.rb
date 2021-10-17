@@ -85,6 +85,11 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Item can't be blank")
       end
+      it 'shipping_area_idに「---」が選択されている場合は出品できない' do
+        @item.shipping_area_id = '1'
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Shipping area can't be blank")
+      end
     end
   end
 end
